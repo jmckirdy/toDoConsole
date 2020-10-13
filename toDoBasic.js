@@ -1,6 +1,6 @@
-// add function, remove func, done func, clear-all funct, print funct, displays messages
-// upon funct request
-// takes input from user, (action, day) stores it in diff arrays
+/*Add function, remove func, done func, clear-all funct, 
+print funct, displays messages upon funct request, takes 
+input from user, (action, day) stores it in diff arrays*/
 
 // Import prompt
 const prompt = require('prompt-sync')();
@@ -8,14 +8,26 @@ const prompt = require('prompt-sync')();
 // Import Date/time
 
 
-const name = prompt(console.log('Jeeves -- Enter your username'));
-if (name !== "jjmck") {
-    prompt('\n' + name + " was not the correct username. Try again.");
-} else { 
-    prompt("\nWecome to the console " + name + '\n');
-}    
-// don't allow access. break or exit execution. Once logged in display Jeeves graphic
+/*Allows people to enter by entering correct
+UserID and Password*/
 
+let user = prompt('Jeeves -- Enter UserID:');
+let pass = prompt('Jeeves -- Enter Password:');
+
+function passUser() {
+    if (user=="jjmck") { 
+    if (pass=="password") {              
+        console.log("\nCorrect UserID/Password");
+    } else {
+        console.log("\nInvalid Password");
+        return process.exit();         
+    } } else {  
+        console.log("\nInvalid UserID");
+        return process.exit();
+    }
+}
+
+passUser();
 
 // Arrays
 const sun = ['sunday'];
@@ -32,11 +44,11 @@ const days = [sun, mon, tues, wed, thurs, fri, sat];
 // use indexOf, |, substring to separate words within string
 // first word goes to that array, also use a char to indicate which array
 // -todo, _day, perhaps space would work too.
-console.log('1.\) add todo day');
-console.log('2.\) remove todo day');
+console.log('\n1.\) add <todo> <day>');
+console.log('2.\) remove <todo> <day>');
 console.log('3.\) print schedule');
 console.log('4.\) exit\n');
-const action = prompt(console.log('What would you like to do?'));
+const action = prompt('What would you like to do?');
 
 // garbage sorting function
 function sort(str1, str2, str3) {
@@ -80,7 +92,6 @@ function removeToDo(todo, day) {
         }
     }
 } 
-
 
 sort('add run day');
 // addToDo('walk dog', wed);
