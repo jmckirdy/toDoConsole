@@ -9,25 +9,24 @@ const prompt = require('prompt-sync')();
 
 
 /*Allows people to enter by entering correct
-UserID and Password*/
+UserID and Password - it works just commented out*/
 
-let user = prompt('Jeeves -- Enter UserID:');
-let pass = prompt('Jeeves -- Enter Password:');
+// let user = prompt('Jeeves -- Enter UserID:');
+// let pass = prompt('Jeeves -- Enter Password:');
 
-function passUser() {
-    if (user=="jjmck") { 
-    if (pass=="password") {              
-        console.log("\nCorrect UserID/Password");
-    } else {
-        console.log("\nInvalid Password");
-        return process.exit();         
-    } } else {  
-        console.log("\nInvalid UserID");
-        return process.exit();
-    }
-}
-
-passUser();
+// function passUser() {
+//     if (user=="jjmck") { 
+//     if (pass=="password") {              
+//         console.log("\nCorrect UserID/Password");
+//     } else {
+//         console.log("\nInvalid Password");
+//         return process.exit();         
+//     } } else {  
+//         console.log("\nInvalid UserID");
+//         return process.exit();
+//     }
+// }
+// passUser();
 
 // Arrays
 const sun = ['sunday'];
@@ -44,6 +43,11 @@ const days = [sun, mon, tues, wed, thurs, fri, sat];
 // use indexOf, |, substring to separate words within string
 // first word goes to that array, also use a char to indicate which array
 // -todo, _day, perhaps space would work too.
+
+let addArray = ['add', '<todo>', '<day>']
+let removeArray = ['remove', '<todo>', '<day>']
+
+
 console.log('\n1.\) add <todo> <day>');
 console.log('2.\) remove <todo> <day>');
 console.log('3.\) print schedule');
@@ -51,6 +55,8 @@ console.log('4.\) exit\n');
 const action = prompt('What would you like to do?');
 
 // garbage sorting function
+// if we change above printOut to an array instead, 
+// then this func won't be needed.
 function sort(str1, str2, str3) {
     if (str1 == 'add') {
         addToDo(str2, str3);
@@ -63,8 +69,8 @@ function sort(str1, str2, str3) {
 
 
 for (let i = 0; i < action.length; i++) {
-    if (action.charAt(i) === ' ') {
-        console.log('There is a space at index ' + i);
+    if (action[0 -2] == 'add') {
+        console.log('This is add function');
     }
 }
 
@@ -93,13 +99,14 @@ function removeToDo(todo, day) {
     }
 } 
 
-sort('add run day');
-// addToDo('walk dog', wed);
-// addToDo('eat food', fri);
+
+// sort('add run day');
+addToDo('walk dog', wed);
+addToDo('eat food', fri);
 // removeToDo('walk dog', wed);
 
-// console.log(days);
-// console.log(typeof sun);
+console.log(action);
+console.log(typeof action);
 
 // Print function, takes 1+ args
 // const print = console.log(days);
