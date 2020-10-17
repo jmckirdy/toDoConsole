@@ -2,11 +2,26 @@
 print funct, displays messages upon funct request, takes 
 input from user, (action, day) stores it in diff arrays*/
 
+
 // Import prompt
 const prompt = require('prompt-sync')();
+console.log(' ');
 
-// Import Date/time
+// // Import Date/time
+// let date_ob = new Date();
+// // current date
+// // adjust 0 before single digit date
+// let date = ("0" + date_ob.getDate()).slice(-2);
+// // current month
+// let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+// // current year
+// let year = date_ob.getFullYear();
+// // prints date in YYYY-MM-DD format
+// console.log(year + "-" + month + "-" + date);
 
+var moment = require('moment');
+var a = moment().toString();
+console.log(a);
 
 /*Allows people to enter by entering correct
 UserID and Password - it works just commented out*/
@@ -70,7 +85,7 @@ function sort(str1, str2, str3) {
 
 for (let i = 0; i < action.length; i++) {
     if (action[0 -2] == 'add') {
-        console.log('This is add function');
+        return ('This is add function');
     }
 }
 
@@ -106,7 +121,7 @@ addToDo('eat food', fri);
 // removeToDo('walk dog', wed);
 
 console.log(action);
-console.log(typeof action);
+// console.log(typeof action);
 
 // Print function, takes 1+ args
 // const print = console.log(days);
