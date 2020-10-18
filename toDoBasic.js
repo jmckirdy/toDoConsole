@@ -7,18 +7,7 @@ input from user, (action, day) stores it in diff arrays*/
 const prompt = require('prompt-sync')();
 console.log(' ');
 
-// // Import Date/time
-// let date_ob = new Date();
-// // current date
-// // adjust 0 before single digit date
-// let date = ("0" + date_ob.getDate()).slice(-2);
-// // current month
-// let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
-// // current year
-// let year = date_ob.getFullYear();
-// // prints date in YYYY-MM-DD format
-// console.log(year + "-" + month + "-" + date);
-
+// Import Date/time
 var moment = require('moment');
 var a = moment().toString();
 console.log(a);
@@ -44,53 +33,28 @@ UserID and Password - it works just commented out*/
 // passUser();
 
 // Arrays
-const sun = ['sunday'];
-const mon = ['monday'];
-const tues = ['tuesday'];
-const wed = ['wednesday'];
-const thurs = ['thursday'];
-const fri = ['friday'];
-const sat = ['saturday'];
+let sun = ['sunday', 'a', 'b', 'c'];
+let mon = ['monday', 'a', 'b', 'c'];
+let tues = ['tuesday', 'a', 'b', 'c'];
+let wed = ['wednesday'];
+let thurs = ['thursday'];
+let fri = ['friday'];
+let sat = ['saturday'];
 
-const days = [sun, mon, tues, wed, thurs, fri, sat];
-
-// needs work, each should apply command to a given array.
-// use indexOf, |, substring to separate words within string
-// first word goes to that array, also use a char to indicate which array
-// -todo, _day, perhaps space would work too.
-
-let addArray = ['add', '<todo>', '<day>']
-let removeArray = ['remove', '<todo>', '<day>']
+let days = [sun, mon, tues, wed, thurs, fri, sat];
 
 
 console.log('\n1.\) add <todo> <day>');
 console.log('2.\) remove <todo> <day>');
-console.log('3.\) print schedule');
+console.log('3.\) print schd');
 console.log('4.\) exit\n');
-const action = prompt('What would you like to do?');
+let action = prompt('What would you like to do?');
 
-// garbage sorting function
-// if we change above printOut to an array instead, 
-// then this func won't be needed.
-function sort(str1, str2, str3) {
-    if (str1 == 'add') {
-        addToDo(str2, str3);
-    } else if (str1 == 'remove') {
-        removeToDo(str1, str2);
-    } else {
-        console.log('must be another function');
-    }
-}
+// use split() method to separate user input string into an array of substrings
+let actionArray = action.split(' ');
+console.log(actionArray);
 
-
-for (let i = 0; i < action.length; i++) {
-    if (action[0 -2] == 'add') {
-        return ('This is add function');
-    }
-}
-
-
-// create a add todo function, takes 2 args (todo, day)
+// create an addToDo function that takes 2 args (todo, day)
 function addToDo(todo, day) {
     // loop over days
     for (let i = 0; i < days.length; i++) {
@@ -114,14 +78,29 @@ function removeToDo(todo, day) {
     }
 } 
 
+// hard coded sorting loop
+// for loop is adding for every item in array I only want once
+
+    if (actionArray[0] == 'add') {
+        addToDo(actionArray[1], actionArray[2]);
+    } else if (actionArray[0] == 'remove') {
+        removeToDo(actionArray[1], mon);
+    } else if (actionArray[0] == 'print') {
+        console.log(days);
+    } else if (actionArray[0] == 'exit') {
+        return process.exit();
+    } else {
+        console.log('Syntax Error. You need to type commands as shown.');
+    }
+
 
 // sort('add run day');
-addToDo('walk dog', wed);
-addToDo('eat food', fri);
+// addToDo('walk dog', wed);
+// addToDo('eat food', fri);
 // removeToDo('walk dog', wed);
 
-console.log(action);
-// console.log(typeof action);
+console.log(action.length);
+console.log(days);
 
 // Print function, takes 1+ args
 // const print = console.log(days);
