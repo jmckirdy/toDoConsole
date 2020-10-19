@@ -16,22 +16,22 @@ console.log(a);
 /*Allows people to enter by entering correct
 UserID and Password - it works just commented out*/
 
-let user = prompt('Jeeves -- Enter UserID:');
-let pass = prompt('Jeeves -- Enter Password:');
+// let user = prompt('Jeeves -- Enter UserID:');
+// let pass = prompt('Jeeves -- Enter Password:');
 
-function passUser() {
-    if (user=="jjmck") { 
-    if (pass=="password") {              
-        console.log("\nCorrect UserID/Password");
-    } else {
-        console.log("\nInvalid Password");
-        return process.exit();         
-    } } else {  
-        console.log("\nInvalid UserID");
-        return process.exit();
-    }
-}
-passUser();
+// function passUser() {
+//     if (user=="jjmck") { 
+//     if (pass=="password") {              
+//         console.log("\nCorrect UserID/Password");
+//     } else {
+//         console.log("\nInvalid Password");
+//         return process.exit();         
+//     } } else {  
+//         console.log("\nInvalid UserID");
+//         return process.exit();
+//     }
+// }
+// passUser();
 
 // Arrays
 let sun = ['sunday', 'a', 'b', 'c'];
@@ -65,9 +65,9 @@ third item.
 user input eg: add todo wed 
 */
 
-// let day = inputArray[2];
+
 if (inputArray[0] == 'add') {
-    addToDo(inputArray[1], mon);
+    addToDo(inputArray[1]);
 } else if (inputArray[0] == 'remove') {
     removeToDo(inputArray[1], tues);
 } else if (inputArray[0] == 'print') {
@@ -79,7 +79,8 @@ if (inputArray[0] == 'add') {
 }
 
 
-// create an addToDo function that takes 2 args (todo, day)
+
+// AddToDo function that takes 2 args (todo, day)
 function addToDo(todo, day) {
     // loop over days
     for (let i = 0; i < days.length; i++) {
@@ -103,14 +104,28 @@ function removeToDo(todo, day) {
     }
 } 
 
+// DayFinder function that takes 1 arg (day)
+function dayFinder(day) {
+    // loop over days
+    for (let i = 0; i < days.length; i++) {
+        // if input day is equal to day in days array 
+        if (days[i] == inputArray[2]) {
+            // update day array with .push with the todo string
+            day.push(inputArray[1]);
+        }
+    }
+}
 
-// sort('add run day');
+
 addToDo('walk dog', wed);
 addToDo('eat food', fri);
-removeToDo('walk dog', wed);
+// removeToDo('walk dog', wed);
+dayFinder(mon);
+
 
 console.log(input.length);
 console.log(days);
-// console.log(day);
+console.log(inputArray[1]);
+console.log(inputArray[2]);
 
 
