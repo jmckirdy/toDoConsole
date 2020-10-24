@@ -9,8 +9,8 @@ const prompt = require('prompt-sync')();
 console.log(' ');
 
 // Import Date/time
-var moment = require('moment');
-var a = moment().toString();
+const moment = require('moment');
+const a = moment().toString();
 console.log(a);
 
 /*Allows people to enter by entering correct
