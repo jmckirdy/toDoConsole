@@ -16,22 +16,28 @@ console.log(a);
 /*Allows people to enter by entering correct
 UserID and Password - it works just commented out*/
 
-// let user = prompt('Jeeves -- Enter UserID:');
-// let pass = prompt('Jeeves -- Enter Password:');
+let user = prompt('Jeeves -- Enter UserID:');
+let pass = prompt('Jeeves -- Enter Password:');
 
-// function passUser() {
-//     if (user=="jjmck") { 
-//     if (pass=="password") {              
-//         console.log("\nCorrect UserID/Password");
-//     } else {
-//         console.log("\nInvalid Password");
-//         return process.exit();         
-//     } } else {  
-//         console.log("\nInvalid UserID");
-//         return process.exit();
-//     }
-// }
-// passUser();
+function passUser() {
+    if (user=="jjmck") { 
+    if (pass=="password") {              
+        console.log("\nCorrect UserID/Password");
+    } else {
+        console.log("\nInvalid Password");
+        return process.exit();         
+    } } else {  
+        console.log("\nInvalid UserID");
+        return process.exit();
+    }
+}
+passUser();
+
+console.log('    _  _____ _____ _     _____ ____')
+console.log('   / |/  __//  __// \\ |\\/  __// ___\\ ')
+console.log('   | ||  \\  |  \\  | | //|  \\  |    \\')
+console.log('/\\_| ||  /_ |  /_ | \\// |  /_ \\___ |')
+console.log('\\____/\\____\\\\____\\\\__/  \\____\\\\____/')
 
 // Arrays
 let sun = ['sunday', 'a', 'b', 'c'];
@@ -47,7 +53,7 @@ let days = [sun, mon, tues, wed, thurs, fri, sat];
 
 console.log('\n1.\) add <todo> <day>');
 console.log('2.\) remove <todo> <day>');
-console.log('3.\) print');
+console.log('3.\) print *schedule*');
 console.log('4.\) exit\n');
 let input = prompt('What would you like to do? -- ');
 
