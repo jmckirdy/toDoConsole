@@ -71,9 +71,9 @@ third item.
 user input eg: add todo wed 
 */
 
-
+// hardcoded forgotten second arg in addTodDo func
 if (inputArray[0] == 'add') {
-    addToDo(inputArray[1]);
+    addToDo(inputArray[1], sun);
 } else if (inputArray[0] == 'remove') {
     removeToDo(inputArray[1], tues);
 } else if (inputArray[0] == 'print') {
