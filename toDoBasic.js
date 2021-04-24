@@ -4,6 +4,8 @@ print funct, displays messages upon funct request, takes
 input from user, (action, day) stores it in diff arrays
 */
 
+// New Clone off url Just testing Git
+
 // Import prompt
 const prompt = require('prompt-sync')();
 console.log(' ');
